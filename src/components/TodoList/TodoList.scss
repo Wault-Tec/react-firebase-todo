@@ -1,0 +1,36 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    height: 600px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0.3em;
+      }
+
+    &::-webkit-scrollbar-thumb {
+    background-color: #808080;
+    border-radius: 5px;
+    }
+
+    &__content {
+        display: flex;
+    }
+}
+
+.item-enter {
+    opacity: 0;
+  }
+  .item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  .item-exit {
+    opacity: 1;
+  }
+  .item-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
