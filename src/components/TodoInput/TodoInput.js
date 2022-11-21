@@ -1,7 +1,7 @@
-import { useEffect, useReducer, useState, useContext } from "react";
+import { useReducer, useState, useContext } from "react";
 import { TodosContext } from "../../Context/TodosContext";
 import { reducer } from "../../reducer";
-import { setRequest, getRequest, uploadFile } from '../../api/firebaseApi';
+import { setRequest, uploadFile } from '../../api/firebaseApi';
 import './TodoInput.scss'
 
 const TodoInput = () => {

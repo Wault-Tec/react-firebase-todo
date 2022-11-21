@@ -1,10 +1,7 @@
 import './App.scss';
-import { reducer } from './reducer';
-import { setRequest, getRequest, uploadFile } from './api/firebaseApi';
+import { getRequest } from './api/firebaseApi';
 import { TodosContext } from './Context/TodosContext';
-import { firestore } from './firebase';
-import { useEffect, useReducer, useState } from "react";
-import { collection, getDocs, doc, setDoc, Timestamp, addDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import TodoList from './components/TodoList/TodoList';
 import TodoInput from './components/TodoInput/TodoInput';
 
