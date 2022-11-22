@@ -32,7 +32,6 @@ const TodoInput = () => {
      * @param {event} e 
      */
     const handleUpload = (e) => {
-        console.log('aaa')
         const file = e.target.files[0];
         if(file) {
             setFileUpdoad(file)
