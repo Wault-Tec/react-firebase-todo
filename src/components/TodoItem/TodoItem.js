@@ -93,8 +93,12 @@ const TodoItem = (props) => {
                     </svg>
                 </button>
             </div>
-            {fileName && <hr/>}
-            <a className="item__file" onClick={handleDownload}>{fileName}</a>
+            {fileName == true && 
+            <>
+                <hr/>
+                <a className="item__file" onClick={handleDownload}>{fileName}</a>
+            </>
+            }
         </li>
      );
 }
