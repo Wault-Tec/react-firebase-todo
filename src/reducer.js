@@ -8,6 +8,13 @@ export function reducer(state, action) {
             return {...state, completionDate: action.payload}; 
         case 'fileName':
             return {...state, fileName: action.payload}
+        case 'reset':
+            return {...state, 
+                title: '', 
+                description: '', 
+                completionDate: '',
+                fileName: 'null'
+            }
         default:
             return state
     }

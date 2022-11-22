@@ -16,7 +16,7 @@ const TodoInput = () => {
 
     const [todo, dispatch] = useReducer(reducer, initialState)
     const [fileUpload, setFileUpdoad] = useState(null)
-    const {updateTodos, todos, setTodos} = useContext(TodosContext)
+    const { updateTodos } = useContext(TodosContext)
 
     /**
      * Function saves the data entered by the user in todo state
@@ -32,11 +32,18 @@ const TodoInput = () => {
      * @param {event} e 
      */
     const handleUpload = (e) => {
+        console.log('aaa')
         const file = e.target.files[0];
-        setFileUpdoad(file)
-        dispatch({type:'fileName', payload:file.name})
+        if(file) {
+            setFileUpdoad(file)
+            dispatch({type:'fileName', payload:file.name})
+        }
     }
-
+    
+    /**
+     * Function saves todo-item info on the server and reset inputs
+     * @param {event} e 
+     */
     const handleSubmit = (e) => {
         e.preventDefault()
         
@@ -47,6 +54,8 @@ const TodoInput = () => {
                     uploadFile(fileUpload, id)
                 }
             })
+        dispatch({type:'reset'})
+        setFileUpdoad(null)
     }
 
     return ( 
@@ -54,7 +63,7 @@ const TodoInput = () => {
             <input name="title" type="text" placeholder="Title" onChange={handleChange} value={todo.title} className="form__input" required />
             <textarea name="description" type="text" placeholder="Description" onChange={handleChange} value={todo.description} className="form__input form__input--textarea" />
             <div className="form__group">
-                <input name="date" type="date" onChange={handleChange} value={todo.date} className="form__input form__input--date" required />
+                <input name="date" type="date" onChange={handleChange} value={todo.completionDate} className="form__input form__input--date" required />
                 <label htmlFor="files" className="form__input form__input--files__label">
                     <span>Upload files</span>
                     <p>{fileUpload?.name}</p>
