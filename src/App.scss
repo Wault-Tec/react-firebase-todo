@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import 'mixins.scss';
 
 * {
     margin: 0;
@@ -33,6 +34,9 @@ a {
 
         &--wrapper {
             width: 736px;
+            @include mobile {
+                width: 100%;
+            }
             display: flex;
             flex-direction: column;
             align-items: center;

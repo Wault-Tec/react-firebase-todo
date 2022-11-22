@@ -12,6 +12,7 @@
     font-family: 'Inter';
     color: #F2F2F2;
     transition: opacity .3s;
+    min-width: 445px;
 
     &__content {
         display: flex;
