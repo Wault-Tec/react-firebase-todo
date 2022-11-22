@@ -18,11 +18,19 @@ const TodoInput = () => {
     const [fileUpload, setFileUpdoad] = useState(null)
     const {updateTodos, todos, setTodos} = useContext(TodosContext)
 
+    /**
+     * Function saves the data entered by the user in todo state
+     * @param {event} e 
+     */
     const handleChange = (e) => {
         const {name, value} = e.target
         dispatch({type:name, payload:value})
     }
 
+    /**
+     * Function saves the file uploaded by the user in fileUpload state
+     * @param {event} e 
+     */
     const handleUpload = (e) => {
         const file = e.target.files[0];
         setFileUpdoad(file)
@@ -68,10 +76,7 @@ const TodoInput = () => {
                         </defs>
                     </svg>
                 </button>
-
-                
             </div>
-
         </form>
      );
 }

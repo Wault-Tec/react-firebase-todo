@@ -16,6 +16,9 @@ const TodoItem = (props) => {
         setActualDate(isActualDate(completionDate))
     }, [])
 
+    /**
+     * Function remove item from todo state and send delete request to the server
+     */
     const handleDelete = () => {
         setTodos(todos.filter((todo) => todo.id !== id))
         deleteRequest(id)
@@ -26,16 +29,29 @@ const TodoItem = (props) => {
         })
     }
     
+    /**
+     * Function indicates whether date is the same or after current date
+     * @param {string} date 
+     * @returns {boolean}
+     */
     const isActualDate = (date) => {
         const isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
         dayjs.extend(isSameOrAfter)
         return dayjs(date).isSameOrAfter(dayjs(), 'day')
     }
 
+    /**
+     * Function get the formatted date
+     * @param {string} date 
+     * @returns {string}
+     */
     const formatDate = (date) => {
-        return dayjs(date). format('DD/MM YYYY') 
+        return dayjs(date).format('DD/MM YYYY') 
     }
 
+    /**
+     * Function change state completed and send update request to the server
+     */
     const handleCompleted = () => {
         SetCompleted(!completed)
         updateRequest(id, 'completed', !props.todo.completed).then(

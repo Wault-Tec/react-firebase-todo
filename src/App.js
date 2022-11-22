@@ -12,7 +12,6 @@ function App() {
      * Send a request to the server and update to-do list
      * @returns {array} todos - to-do list
      */
-
     const updateTodos = async () => {
         return await getRequest().then(
             (todos) => {
