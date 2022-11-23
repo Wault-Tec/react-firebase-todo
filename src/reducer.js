@@ -13,7 +13,7 @@ export function reducer(state, action) {
                 title: '', 
                 description: '', 
                 completionDate: '',
-                fileName: 'null'
+                fileName: null
             }
         default:
             return state
