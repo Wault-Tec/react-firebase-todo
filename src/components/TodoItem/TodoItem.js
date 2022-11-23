@@ -1,5 +1,5 @@
 import { deleteRequest, updateRequest, downloadFile, deleteFile } from "../../api/firebaseApi";
-import { TodosContext } from "../../Context/TodosContext";
+import { TodosContext } from "../../context/TodosContext";
 import { useContext, useEffect, useState } from "react";
 import cx from 'classnames';
 import './TodoItem.scss';

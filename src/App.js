@@ -1,6 +1,6 @@
 import './App.scss';
 import { getRequest } from './api/firebaseApi';
-import { TodosContext } from './Context/TodosContext';
+import { TodosContext } from './context/TodosContext';
 import { useEffect, useState } from "react";
 import TodoList from './components/TodoList/TodoList';
 import TodoInput from './components/TodoInput/TodoInput';
