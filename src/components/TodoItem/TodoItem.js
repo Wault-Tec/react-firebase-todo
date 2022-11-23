@@ -93,7 +93,7 @@ const TodoItem = (props) => {
                     </svg>
                 </button>
             </div>
-            {fileName == true && 
+            {(fileName !== null && fileName !== 'null') &&
             <>
                 <hr/>
                 <a className="item__file" onClick={handleDownload}>{fileName}</a>

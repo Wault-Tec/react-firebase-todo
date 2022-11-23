@@ -49,7 +49,7 @@ const TodoInput = () => {
         setRequest(todo)
             .then((id) => {
                 updateTodos()
-                if (fileUpload) {
+                if (fileUpload !== null && fileUpload !== 'null') {
                     uploadFile(fileUpload, id)
                 }
             })
