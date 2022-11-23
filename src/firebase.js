@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
+//keys are hardcoded to test the application locally
 const firebaseConfig = {
     apiKey: "AIzaSyB8Z3OLRQjJomF5fLls_4dD5Fv6ylFQqiE",
     authDomain: "todo-list-2b9fc.firebaseapp.com",
