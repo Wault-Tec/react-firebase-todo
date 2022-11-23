@@ -16,8 +16,6 @@ const TodoItem = (props) => {
         setActualDate(isActualDate(completionDate))
     }, [])
 
-    console.log(typeof(fileName), fileName)
-
     /**
      * Function remove item from todo state and send delete request to the server
      */
